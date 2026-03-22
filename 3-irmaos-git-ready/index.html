@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 Irmãos Solução em Locação | Mesas e cadeiras para eventos</title>
+  <meta name="description" content="Locação de mesas e cadeiras para festas, eventos e confraternizações. Atendimento rápido, entrega programada e orçamento pelo WhatsApp." />
+  <meta name="theme-color" content="#171411" />
+  <style>
+    :root {
+      --bg: #f6f1e9;
+      --bg-2: #efe5d8;
+      --surface: rgba(255,255,255,.7);
+      --surface-2: #fffaf4;
+      --card: #ffffff;
+      --text: #1d1a16;
+      --muted: #6e6255;
+      --line: rgba(25, 22, 18, .10);
+      --line-strong: rgba(25, 22, 18, .18);
+      --accent: #b8813d;
+      --accent-2: #8b5a25;
+      --accent-soft: #f6eadb;
+      --dark: #171411;
+      --dark-2: #211c17;
+      --ok: #0c7a43;
+      --shadow-lg: 0 30px 80px rgba(42, 30, 12, .14);
+      --shadow-md: 0 18px 40px rgba(42, 30, 12, .10);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font: 400 16px/1.6 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(184,129,61,.12), transparent 28%),
+        radial-gradient(circle at 85% 0%, rgba(139,90,37,.08), transparent 20%),
+        linear-gradient(180deg, #faf6ef 0%, #f6f1e9 38%, #f4ede4 100%);
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+
+    .container { width: min(calc(100% - 32px), var(--container)); margin: 0 auto; }
+    .section { padding: 88px 0; }
+    .section-tight { padding: 64px 0; }
+    .overline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(184,129,61,.10);
+      color: var(--accent-2);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .overline::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 6px rgba(184,129,61,.12);
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+      letter-spacing: -.03em;
+      line-height: 1.04;
+    }
+    p { margin: 0; }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.55);
+      backdrop-filter: blur(14px);
+    }
+    .topbar .container {
+      min-height: 46px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .topbar-group { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(250,246,239,.82);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header .container {
+      min-height: 82px;
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      gap: 20px;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: linear-gradient(145deg, #201914, #33281f);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 14px 30px rgba(17,10,3,.18);
+      display: grid;
+      place-items: center;
+      color: #f1d5b3;
+      font-family: ui-serif, Georgia, serif;
+      font-weight: 700;
+      font-size: 22px;
+    }
+    .brand-copy { min-width: 0; }
+    .brand-name { font-weight: 800; font-size: 18px; }
+    .brand-subtitle { font-size: 13px; color: var(--muted); }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      color: #433a31;
+      font-weight: 600;
+    }
+    .nav a:hover { color: var(--accent-2); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .button,
+    .button-secondary,
+    .chip,
+    .pill,
+    .faq-button,
+    .mini-button {
+      border: 0;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+    }
+
+    .button,
+    .button-secondary,
+    .mini-button {
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .button {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #fff;
+      box-shadow: 0 16px 32px rgba(139,90,37,.24);
+    }
+    .button:hover,
+    .mini-button:hover { transform: translateY(-2px); box-shadow: 0 18px 34px rgba(139,90,37,.28); }
+
+    .button-secondary {
+      background: rgba(255,255,255,.75);
+      border: 1px solid var(--line-strong);
+      color: var(--dark);
+      box-shadow: 0 10px 24px rgba(51,40,31,.06);
+    }
+    .button-secondary:hover { transform: translateY(-2px); background: #fff; }
+
+    .mobile-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line-strong);
+      color: var(--dark);
+    }
+    .mobile-panel {
+      display: none;
+      border-top: 1px solid var(--line);
+      background: rgba(250,246,239,.94);
+      backdrop-filter: blur(18px);
+    }
+    .mobile-panel-inner {
+      padding: 14px 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mobile-panel a { padding: 12px 0; font-weight: 700; }
+
+    .hero { padding: 54px 0 72px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
+      gap: 42px;
+      align-items: center;
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .hero-copy h1 {
+      font-size: clamp(46px, 7vw, 82px);
+      max-width: 11ch;
+      color: #1a1510;
+    }
+    .hero-copy p {
+      font-size: clamp(18px, 2vw, 21px);
+      color: #54493d;
+      max-width: 60ch;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-notes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .hero-note {
+      padding: 18px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(51,40,31,.08);
+      box-shadow: 0 16px 34px rgba(42,30,12,.06);
+    }
+    .hero-note strong { display: block; font-size: 15px; margin-bottom: 6px; }
+    .hero-note span { display: block; color: var(--muted); font-size: 14px; line-height: 1.45; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 640px;
+      border-radius: 36px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,248,240,.92)),
+        radial-gradient(circle at 30% 10%, rgba(184,129,61,.12), transparent 26%),
+        linear-gradient(160deg, #f4eadf 0%, #ecdfcf 100%);
+      border: 1px solid rgba(90, 64, 31, .10);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border-radius: 28px;
+      border: 1px solid rgba(90,64,31,.08);
+      pointer-events: none;
+    }
+    .hero-stage {
+      position: absolute;
+      inset: auto 26px 26px 26px;
+      min-height: 190px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(25,20,16,.02), rgba(25,20,16,.08));
+      border: 1px solid rgba(25,20,16,.06);
+    }
+    .floating-card {
+      position: absolute;
+      border-radius: 26px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(51,40,31,.08);
+      box-shadow: 0 20px 46px rgba(42,30,12,.12);
+      backdrop-filter: blur(10px);
+    }
+    .floating-card.main {
+      inset: 92px 46px 156px 46px;
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .floating-card.info {
+      left: 26px;
+      bottom: 28px;
+      padding: 16px 18px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .floating-card.quote {
+      right: 26px;
+      top: 26px;
+      width: 250px;
+      padding: 18px;
+    }
+    .floating-card.quote strong { display: block; font-size: 15px; margin-bottom: 8px; }
+    .floating-card.quote p { color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+    .scene-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 8px 4px 8px 8px;
+    }
+    .scene-copy h2 {
+      font-size: 34px;
+      line-height: 1.02;
+      max-width: 11ch;
+    }
+    .scene-copy p { color: var(--muted); }
+    .scene-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .pill,
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+    .pill {
+      background: #fff;
+      color: #3d342c;
+      border: 1px solid var(--line);
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+    .chip {
+      padding: 8px 12px;
+      font-size: 13px;
+      background: rgba(184,129,61,.10);
+      color: var(--accent-2);
+    }
+
+    .scene-mock {
+      min-height: 100%;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 50% 15%, rgba(184,129,61,.18), transparent 28%),
+        linear-gradient(180deg, #231d18 0%, #171310 100%);
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .scene-mock::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .scene-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .scene-list strong { font-size: 14px; }
+    .scene-list span { color: var(--muted); font-size: 13px; }
+
+    .hero-trust {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.42);
+    }
+    .hero-trust .container {
+      min-height: 88px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+      align-items: center;
+    }
+    .trust-item { display: flex; gap: 14px; align-items: center; }
+    .trust-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(184,129,61,.10);
+      color: var(--accent-2);
+      flex: 0 0 auto;
+    }
+    .trust-item strong { display: block; font-size: 15px; }
+    .trust-item span { display: block; color: var(--muted); font-size: 14px; }
+
+    .heading {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 34px;
+      max-width: 760px;
+    }
+    .heading h2 { font-size: clamp(34px, 4vw, 54px); }
+    .heading p { color: var(--muted); font-size: 18px; }
+
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 22px;
+    }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .card,
+    .category-card,
+    .event-card,
+    .step-card,
+    .testimonial,
+    .faq-item,
+    .contact-card,
+    .cta-panel,
+    .service-card {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(51,40,31,.08);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 18px 40px rgba(42,30,12,.06);
+    }
+
+    .category-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .category-visual {
+      min-height: 230px;
+      padding: 20px;
+      background: linear-gradient(180deg, #201a15 0%, #171411 100%);
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+    .category-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .category-body h3 { font-size: 26px; }
+    .category-body p { color: var(--muted); }
+    .category-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .category-meta span { color: var(--accent-2); font-weight: 700; }
+    .mini-button {
+      min-height: 42px;
+      background: rgba(184,129,61,.10);
+      color: var(--accent-2);
+      padding: 0 14px;
+    }
+
+    .service-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 100%;
+    }
+    .service-card h3 { font-size: 24px; }
+    .service-card p { color: var(--muted); }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: rgba(184,129,61,.10);
+      color: var(--accent-2);
+      display: grid;
+      place-items: center;
+    }
+
+    .split-panel {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .story-card {
+      padding: 28px;
+      background: linear-gradient(180deg, #1b1713 0%, #120f0d 100%);
+      color: #f7efe5;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      right: -100px;
+      top: -90px;
+      background: radial-gradient(circle, rgba(184,129,61,.28), transparent 62%);
+    }
+    .story-card h3 { font-size: 34px; margin-bottom: 16px; }
+    .story-card p { color: rgba(255,244,232,.78); }
+    .story-list { margin: 24px 0 0; display: grid; gap: 14px; }
+    .story-list li {
+      list-style: none;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: rgba(255,244,232,.82);
+    }
+    .story-list li::before {
+      content: "✓";
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: rgba(184,129,61,.16);
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      color: #f0c797;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .metric-stack { display: grid; gap: 18px; }
+    .metric-card {
+      padding: 22px 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(51,40,31,.08);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+    }
+    .metric-card strong { font-size: 17px; }
+    .metric-card span { color: var(--muted); max-width: 34ch; }
+
+    .event-card,
+    .step-card,
+    .testimonial,
+    .contact-card { padding: 24px; }
+    .event-card h3,
+    .step-card h3,
+    .testimonial h3,
+    .contact-card h3 { font-size: 24px; margin-bottom: 10px; }
+    .event-card p,
+    .step-card p,
+    .testimonial p,
+    .contact-card p { color: var(--muted); }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      background: rgba(184,129,61,.10);
+      color: var(--accent-2);
+      margin-bottom: 16px;
+    }
+
+    .cta-band {
+      padding: 26px 0;
+      background: linear-gradient(135deg, #1b1713, #2a221c);
+      color: #f7efe5;
+      margin: 30px 0 0;
+    }
+    .cta-band .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .cta-band p { color: rgba(247,239,229,.78); }
+
+    .quote-line {
+      font-family: ui-serif, Georgia, serif;
+      font-size: 32px;
+      line-height: 1.1;
+      max-width: 18ch;
+    }
+
+    .form-panel {
+      padding: 30px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(51,40,31,.08);
+      border-radius: 28px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .field,
+    .field-full {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .field-full { grid-column: 1 / -1; }
+    label { font-weight: 700; font-size: 14px; }
+    input,
+    textarea,
+    select {
+      min-height: 54px;
+      border-radius: 16px;
+      border: 1px solid rgba(51,40,31,.14);
+      background: #fff;
+      padding: 0 16px;
+      color: var(--text);
+      outline: none;
+    }
+    textarea {
+      min-height: 138px;
+      resize: vertical;
+      padding: 14px 16px;
+    }
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: rgba(184,129,61,.8);
+      box-shadow: 0 0 0 4px rgba(184,129,61,.12);
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid rgba(51,40,31,.12);
+    }
+    .check-item input {
+      width: 18px;
+      height: 18px;
+      min-height: auto;
+      padding: 0;
+      margin: 0;
+      accent-color: var(--accent-2);
+    }
+
+    .faq-list { display: grid; gap: 16px; }
+    .faq-item { overflow: hidden; }
+    .faq-button {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      color: inherit;
+      padding: 22px 24px;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 24px 22px;
+      color: var(--muted);
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-plus { transform: rotate(45deg); }
+    .faq-plus {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: rgba(184,129,61,.10);
+      color: var(--accent-2);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      line-height: 1;
+      flex: 0 0 auto;
+      transition: transform .18s ease;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .cta-panel {
+      padding: 34px;
+      background: linear-gradient(135deg, #18130f, #2a211a);
+      color: #f7efe5;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-panel::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -80px auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(184,129,61,.25), transparent 62%);
+    }
+    .cta-panel h2 { font-size: clamp(34px, 4vw, 54px); margin-bottom: 14px; }
+    .cta-panel p { color: rgba(247,239,229,.78); max-width: 54ch; }
+    .cta-panel .hero-actions { margin-top: 26px; }
+
+    .site-footer {
+      padding: 32px 0 46px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.4);
+    }
+    .site-footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      color: var(--muted);
+    }
+
+    .whats-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1200;
+      width: 66px;
+      height: 66px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #1a8f4e, #0c7a43);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 22px 42px rgba(12,122,67,.26);
+    }
+    .whats-float:hover { transform: translateY(-2px); }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    @media (max-width: 1120px) {
+      .site-header .container { grid-template-columns: auto 1fr auto; }
+      .nav { display: none; }
+      .mobile-toggle { display: inline-grid; place-items: center; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 560px; }
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .split-panel,
+      .contact-grid,
+      .hero-trust .container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .section { padding: 72px 0; }
+      .site-header .container {
+        grid-template-columns: 1fr auto auto;
+        min-height: 74px;
+      }
+      .brand-subtitle,
+      .topbar { display: none; }
+      .header-actions .button-secondary { display: none; }
+      .hero { padding-top: 28px; }
+      .hero-copy h1 { max-width: 12ch; }
+      .hero-note { padding: 16px; }
+      .hero-notes,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .split-panel,
+      .contact-grid,
+      .hero-trust .container,
+      .form-grid,
+      .check-grid {
+        grid-template-columns: 1fr;
+      }
+      .floating-card.main {
+        inset: 84px 18px 150px 18px;
+        grid-template-columns: 1fr;
+      }
+      .floating-card.quote {
+        left: 18px;
+        right: 18px;
+        width: auto;
+      }
+      .floating-card.info { right: 18px; }
+      .hero-visual { min-height: 720px; }
+      .cta-band .container,
+      .site-footer .container { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-group">
+        <span>Entrega e retirada programadas</span>
+        <span>Atendimento rápido pelo WhatsApp</span>
+      </div>
+      <div class="topbar-group">
+        <span data-city>Rio de Janeiro e região</span>
+        <a data-phone-link href="#"><span data-phone-display>(22) 99932-2990</span></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-mark">3I</span>
+        <div class="brand-copy">
+          <div class="brand-name" data-business-name>3 Irmãos Solução em Locação</div>
+          <div class="brand-subtitle">Mesas e cadeiras para festas, eventos e confraternizações</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="#inicio">Início</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#orcamento">Orçamento</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="button-secondary" href="#catalogo">Ver catálogo</a>
+        <a class="button" data-whatsapp-link href="#">Pedir orçamento</a>
+      </div>
+
+      <button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-panel" data-mobile-toggle>
+        ☰
+      </button>
+    </div>
+
+    <div class="mobile-panel" id="mobile-panel" data-mobile-panel>
+      <div class="container mobile-panel-inner">
+        <a href="#inicio">Início</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#vantagens">Vantagens</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#orcamento">Orçamento</a>
+        <a href="#contato">Contato</a>
+        <a class="button" data-whatsapp-link href="#">Pedir orçamento</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="overline">Locação com cara de empresa séria</span>
+          <h1>Mesas e cadeiras para evento sem enrolação.</h1>
+          <p><strong data-business-name>3 Irmãos Solução em Locação</strong> atende festas, igrejas, empresas, escolas, condomínios e confraternizações com entrega organizada, retirada combinada e orçamento rápido pelo WhatsApp.</p>
+
+          <div class="hero-actions">
+            <a class="button" data-whatsapp-link href="#">Solicitar orçamento</a>
+            <a class="button-secondary" href="#orcamento">Montar pedido</a>
+          </div>
+
+          <div class="hero-notes">
+            <div class="hero-note">
+              <strong>Atendimento direto</strong>
+              <span>Sem formulário travado. O cliente pede e já fala com a empresa.</span>
+            </div>
+            <div class="hero-note">
+              <strong>Visual mais premium</strong>
+              <span>Site limpo, profissional e pensado para gerar confiança.</span>
+            </div>
+            <div class="hero-note">
+              <strong>Estrutura comercial</strong>
+              <span>CTA forte, catálogo claro e seções que ajudam a fechar pedido.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="floating-card quote">
+            <strong>Para quem esse site vende melhor</strong>
+            <p>Cliente que quer saber rápido: o que você aluga, onde atende e como pedir orçamento agora.</p>
+          </div>
+
+          <div class="floating-card main">
+            <div class="scene-copy">
+              <div>
+                <span class="chip">Catálogo enxuto + CTA forte</span>
+                <h2>Base profissional para transformar visita em pedido.</h2>
+              </div>
+              <p>A página principal já mostra os itens mais procurados, transmite organização e leva o cliente para o WhatsApp com o contexto certo.</p>
+              <div class="scene-tags">
+                <span class="pill">Mesas plásticas</span>
+                <span class="pill">Mesas de madeira</span>
+                <span class="pill">Cadeiras plásticas</span>
+                <span class="pill">Cadeiras Tiffany</span>
+              </div>
+            </div>
+            <div class="scene-mock">
+              <svg viewBox="0 0 460 360" width="100%" height="100%" role="img" aria-label="Composição elegante de mesas e cadeiras para eventos">
+                <defs>
+                  <linearGradient id="gold" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#f1d6ae"/>
+                    <stop offset="100%" stop-color="#b8813d"/>
+                  </linearGradient>
+                  <linearGradient id="metal" x1="0" x2="1">
+                    <stop offset="0%" stop-color="#f7efe4"/>
+                    <stop offset="100%" stop-color="#c99b62"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="230" cy="292" rx="156" ry="28" fill="rgba(255,255,255,.08)"/>
+                <g transform="translate(80 70)">
+                  <rect x="78" y="66" width="142" height="18" rx="9" fill="url(#gold)"/>
+                  <rect x="92" y="84" width="12" height="130" rx="6" fill="url(#metal)"/>
+                  <rect x="194" y="84" width="12" height="130" rx="6" fill="url(#metal)"/>
+                  <rect x="84" y="208" width="24" height="8" rx="4" fill="#c89a60"/>
+                  <rect x="190" y="208" width="24" height="8" rx="4" fill="#c89a60"/>
+                  <g transform="translate(0 42)">
+                    <rect x="0" y="52" width="42" height="12" rx="6" fill="url(#gold)"/>
+                    <rect x="4" y="64" width="10" height="110" rx="5" fill="url(#metal)"/>
+                    <rect x="28" y="64" width="10" height="110" rx="5" fill="url(#metal)"/>
+                    <path d="M4 88 H38" stroke="#f1d6ae" stroke-width="5" stroke-linecap="round"/>
+                  </g>
+                  <g transform="translate(258 42)">
+                    <rect x="0" y="52" width="42" height="12" rx="6" fill="url(#gold)"/>
+                    <rect x="4" y="64" width="10" height="110" rx="5" fill="url(#metal)"/>
+                    <rect x="28" y="64" width="10" height="110" rx="5" fill="url(#metal)"/>
+                    <path d="M4 88 H38" stroke="#f1d6ae" stroke-width="5" stroke-linecap="round"/>
+                  </g>
+                  <g transform="translate(56 0)">
+                    <path d="M32 0 C54 0 64 20 64 34 V52 H0 V34 C0 20 10 0 32 0Z" fill="none" stroke="url(#gold)" stroke-width="8"/>
+                    <rect x="8" y="50" width="48" height="14" rx="7" fill="url(#gold)"/>
+                    <rect x="10" y="64" width="10" height="144" rx="5" fill="url(#metal)"/>
+                    <rect x="44" y="64" width="10" height="144" rx="5" fill="url(#metal)"/>
+                  </g>
+                  <g transform="translate(186 0)">
+                    <path d="M32 0 C54 0 64 20 64 34 V52 H0 V34 C0 20 10 0 32 0Z" fill="none" stroke="url(#gold)" stroke-width="8"/>
+                    <rect x="8" y="50" width="48" height="14" rx="7" fill="url(#gold)"/>
+                    <rect x="10" y="64" width="10" height="144" rx="5" fill="url(#metal)"/>
+                    <rect x="44" y="64" width="10" height="144" rx="5" fill="url(#metal)"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="hero-stage"></div>
+
+          <div class="floating-card info">
+            <div class="scene-list">
+              <strong>Entrega organizada</strong>
+              <span>Pedido confirmado, horário combinado e retirada programada.</span>
+            </div>
+            <span class="chip">Orçamento em poucos cliques</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-trust">
+      <div class="container">
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-2.8 8.7-7 10-4.2-1.3-7-5.5-7-10V6l7-3z" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <div><strong>Empresa com postura</strong><span>Visual e linguagem que passam confiança.</span></div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h13l3 3v7H4z" stroke="currentColor" stroke-width="1.8"/><path d="M8 17a2 2 0 100 4 2 2 0 000-4zm8 0a2 2 0 100 4 2 2 0 000-4z" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <div><strong>Entrega e retirada</strong><span>Fluxo claro para evento social e corporativo.</span></div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 12h12M12 6v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div><strong>Catálogo direto</strong><span>O cliente entende rápido o que você aluga.</span></div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/></svg>
+          </div>
+          <div><strong>Resposta rápida</strong><span>Site pensado para converter no celular.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="container">
+        <div class="heading">
+          <span class="overline">Catálogo em destaque</span>
+          <h2>Os itens que mais geram pedido já entram na home.</h2>
+          <p>Em vez de esconder o acervo, a página principal mostra logo o que interessa: tipo de mesa, tipo de cadeira, perfil de uso e ação para orçamento.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="category-card">
+            <div class="category-visual">
+              <svg viewBox="0 0 320 220" width="100%" height="100%" role="img" aria-label="Mesa plástica quadrada">
+                <rect x="84" y="64" width="152" height="18" rx="9" fill="#f1d6ae"/>
+                <rect x="96" y="82" width="12" height="102" rx="6" fill="#ead1ad"/>
+                <rect x="212" y="82" width="12" height="102" rx="6" fill="#ead1ad"/>
+                <rect x="94" y="182" width="18" height="8" rx="4" fill="#d7ab74"/>
+                <rect x="208" y="182" width="18" height="8" rx="4" fill="#d7ab74"/>
+              </svg>
+            </div>
+            <div class="category-body">
+              <span class="chip">Mais prática</span>
+              <h3>Mesa plástica 70x70</h3>
+              <p>Boa para aniversários, almoços, eventos em casa, condomínio e confraternizações com montagem rápida.</p>
+              <div class="category-meta">
+                <span>Alto giro</span>
+                <a class="mini-button" data-whatsapp-link href="#">Orçar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-visual">
+              <svg viewBox="0 0 320 220" width="100%" height="100%" role="img" aria-label="Cadeira plástica">
+                <path d="M126 36c20 0 34 14 34 32v14H92V68c0-18 14-32 34-32z" fill="none" stroke="#f1d6ae" stroke-width="10"/>
+                <rect x="100" y="82" width="54" height="16" rx="8" fill="#f1d6ae"/>
+                <rect x="102" y="98" width="12" height="104" rx="6" fill="#ead1ad"/>
+                <rect x="140" y="98" width="12" height="104" rx="6" fill="#ead1ad"/>
+              </svg>
+            </div>
+            <div class="category-body">
+              <span class="chip">Volume</span>
+              <h3>Cadeira plástica</h3>
+              <p>Opção de custo-benefício para eventos com muitos convidados e necessidade de agilidade na logística.</p>
+              <div class="category-meta">
+                <span>Mais pedida</span>
+                <a class="mini-button" data-whatsapp-link href="#">Orçar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-visual">
+              <svg viewBox="0 0 320 220" width="100%" height="100%" role="img" aria-label="Mesa de madeira">
+                <rect x="70" y="72" width="180" height="18" rx="9" fill="#d4a372"/>
+                <rect x="92" y="90" width="12" height="108" rx="6" fill="#bb8650"/>
+                <rect x="216" y="90" width="12" height="108" rx="6" fill="#bb8650"/>
+                <path d="M102 142h116" stroke="#e9c69f" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="category-body">
+              <span class="chip">Visual superior</span>
+              <h3>Mesa de madeira</h3>
+              <p>Entrega mais presença visual para casamentos, recepções, eventos corporativos e montagens elegantes.</p>
+              <div class="category-meta">
+                <span>Premium</span>
+                <a class="mini-button" data-whatsapp-link href="#">Orçar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-visual">
+              <svg viewBox="0 0 320 220" width="100%" height="100%" role="img" aria-label="Cadeira Tiffany">
+                <path d="M126 28c22 0 38 18 38 34v22H88V62c0-16 16-34 38-34z" fill="none" stroke="#f1d6ae" stroke-width="8"/>
+                <rect x="98" y="84" width="56" height="14" rx="7" fill="#f1d6ae"/>
+                <rect x="101" y="98" width="10" height="108" rx="5" fill="#e7c58f"/>
+                <rect x="141" y="98" width="10" height="108" rx="5" fill="#e7c58f"/>
+                <path d="M101 116h50M101 136h50M101 156h50" stroke="#f1d6ae" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="category-body">
+              <span class="chip">Elegância</span>
+              <h3>Cadeira Tiffany</h3>
+              <p>Modelo para eventos mais sofisticados, recepções e montagens com estética refinada.</p>
+              <div class="category-meta">
+                <span>Destaque premium</span>
+                <a class="mini-button" data-whatsapp-link href="#">Orçar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" id="vantagens">
+      <div class="container split-panel">
+        <article class="story-card card">
+          <span class="overline">O que mudou na nova base</span>
+          <h3>Agora tem cara de empresa boa.</h3>
+          <p>Essa versão foi redesenhada para parecer séria, organizada e confiável. Sai o aspecto de página genérica e entra uma presença comercial mais forte.</p>
+          <ul class="story-list">
+            <li>Hero com proposta clara e CTA forte.</li>
+            <li>Catálogo mais elegante e fácil de escanear.</li>
+            <li>Visual premium, limpo e profissional.</li>
+            <li>Arquivo único que abre certo mesmo fora da pasta.</li>
+          </ul>
+        </article>
+
+        <div class="metric-stack">
+          <article class="metric-card">
+            <div>
+              <strong>Site que vende no celular</strong>
+              <span>Botões grandes, leitura boa e WhatsApp sempre acessível.</span>
+            </div>
+            <span class="chip">Conversão</span>
+          </article>
+          <article class="metric-card">
+            <div>
+              <strong>Visual mais adulto</strong>
+              <span>Paleta sóbria, cards refinados e hierarquia que passa confiança.</span>
+            </div>
+            <span class="chip">Percepção</span>
+          </article>
+          <article class="metric-card">
+            <div>
+              <strong>Mensagem local e objetiva</strong>
+              <span>Mostra atendimento, entrega e tipo de evento logo de cara.</span>
+            </div>
+            <span class="chip">Clareza</span>
+          </article>
+          <article class="metric-card">
+            <div>
+              <strong>Pronto para colocar fotos reais</strong>
+              <span>Quando você me mandar as fotos do acervo, dá para elevar mais ainda.</span>
+            </div>
+            <span class="chip">Escala</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="heading">
+          <span class="overline">Diferenciais</span>
+          <h2>Uma estrutura simples, bonita e feita para fechar pedido.</h2>
+          <p>Em empresa local, não adianta inventar demais. O que converte é clareza, confiança e facilidade para falar com a equipe.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M7 4h10v16H7zM3 8h4M17 8h4" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <h3>Catálogo com intenção comercial</h3>
+            <p>Cada bloco responde uma dúvida do cliente: que item é, para que tipo de evento serve e como pedir orçamento.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 12h12M12 6v12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3>CTA distribuído do jeito certo</h3>
+            <p>O visitante encontra ação no menu, no hero, nas categorias, no formulário e no botão flutuante.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12l5 5 11-11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Tom profissional sem parecer engessado</h3>
+            <p>A marca fica séria, porém acessível. Isso costuma funcionar melhor para negócio familiar e atendimento direto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div>
+          <div class="quote-line">Quem entra no site entende rápido e chama no WhatsApp.</div>
+          <p>Essa é a lógica que faz mais sentido para locação local.</p>
+        </div>
+        <a class="button" data-whatsapp-link href="#">Falar agora</a>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="heading">
+          <span class="overline">Como funciona</span>
+          <h2>Um fluxo que reduz dúvida e agiliza o fechamento.</h2>
+          <p>Quanto mais simples o processo, maior a chance do cliente não desistir no meio.</p>
+        </div>
+
+        <div class="grid-4">
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <h3>Escolha os itens</h3>
+            <p>O cliente vê os principais produtos e já entende qual combinação precisa para o evento.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <h3>Envie o pedido</h3>
+            <p>O formulário monta uma mensagem pronta no WhatsApp com data, bairro e quantidade.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <h3>Confirmação rápida</h3>
+            <p>A equipe retorna com disponibilidade, valor e orientação para entrega e retirada.</p>
+          </article>
+          <article class="step-card">
+            <div class="step-number">4</div>
+            <h3>Evento resolvido</h3>
+            <p>Tudo fica mais organizado e o cliente sente que está lidando com uma empresa confiável.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="heading">
+          <span class="overline">Tipos de evento</span>
+          <h2>O site já fala com os públicos mais comuns da locação.</h2>
+          <p>Isso ajuda o visitante a se enxergar ali e aumenta a sensação de que a empresa atende exatamente o que ele precisa.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="event-card">
+            <h3>Festas e aniversários</h3>
+            <p>Pedidos rápidos, volume médio e foco em praticidade para casa, salão e condomínio.</p>
+          </article>
+          <article class="event-card">
+            <h3>Casamentos e recepções</h3>
+            <p>Mais atenção ao visual das mesas e cadeiras, acabamento e organização da montagem.</p>
+          </article>
+          <article class="event-card">
+            <h3>Empresas, igrejas e escolas</h3>
+            <p>Demanda por pontualidade, quantidade e atendimento objetivo para resolver a logística sem dor de cabeça.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="orcamento">
+      <div class="container split-panel">
+        <article class="cta-panel">
+          <span class="overline">Montar orçamento</span>
+          <h2>Deixa o cliente pronto para pedir.</h2>
+          <p>Esse bloco resolve uma das partes mais importantes do site: transformar visita em conversa comercial com contexto suficiente para você responder rápido.</p>
+          <div class="hero-actions">
+            <a class="button" data-whatsapp-link href="#">Abrir WhatsApp</a>
+            <a class="button-secondary" href="#contato">Ver contatos</a>
+          </div>
+        </article>
+
+        <form class="form-panel" data-budget-form>
+          <div class="form-grid">
+            <div class="field">
+              <label for="nome">Seu nome</label>
+              <input id="nome" name="nome" type="text" placeholder="Ex.: João" required />
+            </div>
+            <div class="field">
+              <label for="telefone">Telefone</label>
+              <input id="telefone" name="telefone" type="tel" placeholder="(22) 99932-2990" required />
+            </div>
+            <div class="field">
+              <label for="dataEvento">Data do evento</label>
+              <input id="dataEvento" name="dataEvento" type="date" required />
+            </div>
+            <div class="field">
+              <label for="cidade">Bairro / cidade</label>
+              <input id="cidade" name="cidade" type="text" placeholder="Ex.: Campo Grande" required />
+            </div>
+            <div class="field-full">
+              <label>Itens de interesse</label>
+              <div class="check-grid">
+                <label class="check-item"><input type="checkbox" name="itens" value="Mesa plástica" /> <span>Mesa plástica</span></label>
+                <label class="check-item"><input type="checkbox" name="itens" value="Cadeira plástica" /> <span>Cadeira plástica</span></label>
+                <label class="check-item"><input type="checkbox" name="itens" value="Mesa de madeira" /> <span>Mesa de madeira</span></label>
+                <label class="check-item"><input type="checkbox" name="itens" value="Cadeira Tiffany" /> <span>Cadeira Tiffany</span></label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="qtdMesas">Quantidade de mesas</label>
+              <input id="qtdMesas" name="qtdMesas" type="number" min="0" placeholder="0" />
+            </div>
+            <div class="field">
+              <label for="qtdCadeiras">Quantidade de cadeiras</label>
+              <input id="qtdCadeiras" name="qtdCadeiras" type="number" min="0" placeholder="0" />
+            </div>
+            <div class="field-full">
+              <label for="mensagem">Observações</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Ex.: preciso de entrega pela manhã, evento em salão, acesso por escada, etc."></textarea>
+            </div>
+            <div class="field-full">
+              <button class="button" type="submit">Enviar orçamento pelo WhatsApp</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="heading">
+          <span class="overline">Prova de confiança</span>
+          <h2>Textos curtos que ajudam a fechar mais.</h2>
+          <p>Você pode trocar esses depoimentos por avaliações reais depois, mas a estrutura já está pronta.</p>
+        </div>
+        <div class="grid-3">
+          <article class="testimonial">
+            <h3>Atendimento que resolve</h3>
+            <p>“Precisava de resposta rápida e consegui fechar tudo pelo WhatsApp sem complicação.”</p>
+          </article>
+          <article class="testimonial">
+            <h3>Entrega organizada</h3>
+            <p>“Chegou no horário combinado e isso fez diferença na preparação do evento.”</p>
+          </article>
+          <article class="testimonial">
+            <h3>Boa apresentação</h3>
+            <p>“O material veio bem alinhado com o tipo de montagem que a gente precisava.”</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="heading">
+          <span class="overline">Perguntas frequentes</span>
+          <h2>Dúvidas que normalmente travam o pedido.</h2>
+          <p>Essas respostas ajudam o cliente a seguir adiante sem precisar perguntar tudo do zero.</p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-button" type="button">
+              <span>Vocês fazem entrega e retirada?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">Sim. O site já posiciona a empresa como operação com entrega e retirada programadas. Depois você pode ajustar os bairros e regras conforme a realidade do negócio.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button">
+              <span>Atendem quais tipos de evento?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">Festas, aniversários, casamentos, recepções, eventos corporativos, igrejas, escolas, condomínios e confraternizações em geral.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button">
+              <span>O orçamento sai pelo site?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">O site conduz para o WhatsApp com os dados já preenchidos. Isso costuma converter melhor do que forçar o cliente a esperar resposta por e-mail.</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button">
+              <span>Dá para trocar as informações da empresa?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">Sim. No final do arquivo existe um bloco de configuração com nome, telefone, WhatsApp, e-mail, Instagram e cidade. É só editar ali.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" id="contato">
+      <div class="container">
+        <div class="heading">
+          <span class="overline">Contato</span>
+          <h2>Deixa tudo fácil para o cliente chamar.</h2>
+          <p>Contato visível passa segurança e reduz abandono, principalmente em negócio local.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>WhatsApp</h3>
+            <p>Atendimento principal para pedidos, dúvidas e disponibilidade.</p>
+            <div class="hero-actions" style="margin-top:16px">
+              <a class="button" data-whatsapp-link href="#">Chamar no WhatsApp</a>
+            </div>
+          </article>
+          <article class="contact-card">
+            <h3>Telefone</h3>
+            <p><a data-phone-link href="#"><span data-phone-display>(22) 99932-2990</span></a></p>
+            <p style="margin-top:10px">Use esse campo para fixo ou celular comercial.</p>
+          </article>
+          <article class="contact-card">
+            <h3>E-mail e Instagram</h3>
+            <p><a data-email-link href="#"><span data-email>[email protected]</span></a></p>
+            <p style="margin-top:10px"><a data-instagram-link href="#" target="_blank" rel="noopener noreferrer">Abrir Instagram</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <strong data-business-name>3 Irmãos Solução em Locação</strong><br />
+        <span>Mesas e cadeiras para eventos com atendimento rápido e presença profissional.</span>
+      </div>
+      <div>© <span data-year></span> <span data-short-name>3 Irmãos</span>. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <a class="whats-float" data-whatsapp-link href="#" aria-label="Falar no WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path d="M16 4C9.4 4 4 9.2 4 15.8c0 2.2.6 4.2 1.7 6l-1.4 5.5 5.7-1.4c1.7.9 3.7 1.4 6 1.4 6.6 0 12-5.2 12-11.8S22.6 4 16 4zm6.8 16.6c-.3.8-1.7 1.5-2.3 1.6-.6.1-1.4.2-2.2 0-.5-.1-1.2-.4-2.1-.8-3.6-1.5-5.9-5-6.1-5.3-.2-.3-1.5-2-.1-3.8.3-.4.8-.6 1.2-.6h.9c.3 0 .6 0 .8.7.3.8 1 2.8 1.1 3 .1.2.1.5 0 .8-.1.2-.2.4-.4.6-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.2.4.9 1.5 1.9 2.4 1.3 1.2 2.4 1.6 2.8 1.8.4.2.6.2.8-.1.2-.3.9-1.1 1.1-1.5.3-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.1.4.2.6.3.7.5.1.2.1 1-.2 1.8z" fill="currentColor"/>
+    </svg>
+    <span class="sr-only">WhatsApp</span>
+  </a>
+
+  <script>
+    const SITE_CONFIG = {
+      businessName: "3 Irmãos Solução em Locação",
+      shortName: "3 Irmãos",
+      phoneDisplay: "(22) 99932-2990",
+      phoneLink: "5522999322990",
+      whatsappNumber: "5522999322990",
+      email: "contato@3irmaoslocacao.com.br",
+      city: "Rio de Janeiro e região",
+      instagram: "https://instagram.com/3irmaoslocacao"
+    };
+
+    const $all = (s) => Array.from(document.querySelectorAll(s));
+    const whatsappMessage = encodeURIComponent(`Olá, ${SITE_CONFIG.shortName}! Gostaria de solicitar um orçamento para locação de mesas e cadeiras.`);
+    const whatsappURL = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${whatsappMessage}`;
+
+    $all('[data-business-name]').forEach(el => el.textContent = SITE_CONFIG.businessName);
+    $all('[data-short-name]').forEach(el => el.textContent = SITE_CONFIG.shortName);
+    $all('[data-phone-display]').forEach(el => el.textContent = SITE_CONFIG.phoneDisplay);
+    $all('[data-email]').forEach(el => el.textContent = SITE_CONFIG.email);
+    $all('[data-city]').forEach(el => el.textContent = SITE_CONFIG.city);
+    $all('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+    $all('[data-phone-link]').forEach(el => el.href = `tel:+${SITE_CONFIG.phoneLink}`);
+    $all('[data-email-link]').forEach(el => el.href = `mailto:${SITE_CONFIG.email}`);
+    $all('[data-instagram-link]').forEach(el => el.href = SITE_CONFIG.instagram);
+    $all('[data-whatsapp-link]').forEach(el => el.href = whatsappURL);
+
+    const mobileToggle = document.querySelector('[data-mobile-toggle]');
+    const mobilePanel = document.querySelector('[data-mobile-panel]');
+    if (mobileToggle && mobilePanel) {
+      mobileToggle.addEventListener('click', () => {
+        const open = mobilePanel.style.display === 'block';
+        mobilePanel.style.display = open ? 'none' : 'block';
+        mobileToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      });
+      mobilePanel.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        mobilePanel.style.display = 'none';
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
+
+    document.querySelectorAll('.faq-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    const budgetForm = document.querySelector('[data-budget-form]');
+    if (budgetForm) {
+      budgetForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const data = new FormData(budgetForm);
+        const itens = data.getAll('itens');
+        const lines = [
+          `Olá, ${SITE_CONFIG.shortName}!`,
+          'Quero um orçamento para locação de mesas e cadeiras.',
+          '',
+          `Nome: ${data.get('nome') || ''}`,
+          `Telefone: ${data.get('telefone') || ''}`,
+          `Data do evento: ${data.get('dataEvento') || ''}`,
+          `Bairro / cidade: ${data.get('cidade') || ''}`,
+          `Itens: ${itens.length ? itens.join(', ') : 'Não informado'}`,
+          `Quantidade de mesas: ${data.get('qtdMesas') || 'Não informado'}`,
+          `Quantidade de cadeiras: ${data.get('qtdCadeiras') || 'Não informado'}`,
+          `Observações: ${data.get('mensagem') || 'Sem observações'}`
+        ];
+        const finalURL = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${encodeURIComponent(lines.join('\n'))}`;
+        window.open(finalURL, '_blank', 'noopener,noreferrer');
+      });
+    }
+  </script>
+</body>
+</html>
